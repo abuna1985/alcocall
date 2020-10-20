@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   getNonAlcohol: function () {
     return axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?a=Non_Alcoholic`
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?a=Non_Alcoholic`
     );
   },
   getRandom: function () {
