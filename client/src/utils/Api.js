@@ -8,22 +8,22 @@ export default {
   },
   getRandom: function () {
     return axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/random.php`
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/random.php`
     );
   },
   getIngs: function (ing) {
     return axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
     );
   },
   getId: function (id) {
     return axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/lookup.php?i=` + id
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/lookup.php?i=` + id
     );
   },
   getMultiIng: function (ing) {
     return axios.get(
-      `https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
     );
   }
 };
