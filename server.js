@@ -18,6 +18,8 @@ const app = express();
 require("dotenv").config();
 
 app.use(compression());
+
+// Cors middleware
 app.use(cors());
 app.options('*', cors());
 
