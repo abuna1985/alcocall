@@ -18,7 +18,7 @@ const app = express();
 require("dotenv").config();
 
 app.use(compression());
-app.use(cors());
+app.options('*', cors())
 
 // Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
