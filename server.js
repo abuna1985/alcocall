@@ -23,6 +23,11 @@ app.use(compression());
 app.use(cors());
 app.options('*', cors());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 // Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
