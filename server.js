@@ -19,15 +19,6 @@ require("dotenv").config();
 
 app.use(compression());
 
-// Cors middleware
-app.use(cors());
-app.options('*', cors());
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
 // Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -44,6 +35,19 @@ require("./config/passport")(passport);
 // Serve static assets (Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+
+  var whitelist = ['https://www.thecocktaildb.com', 'https://limitless-fortress-81877.herokuapp.com']
+  var corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    }
+  }
+
+  app.use(cors(corsOptions));
 }
 
 //Routes
